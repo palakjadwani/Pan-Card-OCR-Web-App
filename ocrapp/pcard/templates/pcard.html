@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <title>ocr</title>
+ </head>
+ <body>
+    <h2>Upload Cropped Pancard Image</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ img.image }}
+    </form>
+    <br>
+    <h3>Pan Card OCR extracted result:</h3>
+    <form>
+        {% csrf_token %}
+        {{ img.image }}
+    </form>
+<!--    <form>-->
+<!--        Full Name : <input type="text" name="name" value="{{ info.name }}"><br>-->
+<!--        Father's Name : <input type="text" name="fatherName" value="{{ info.fname }}"><br>-->
+<!--        Date of Birth : <input type="text" name="dob" value="{{ info.dob }}"><br>-->
+<!--        Unique PAN Number : <input type="text" name="pan" value="{{ info.pan }}"><br>-->
+<!--        Scanned Signature : <input type="image" name="sign" value=""><br>-->
+<!--        Photo : <input type="image" name="pic" value=""><br>-->
+<!--        <input type="reset" value="Reset">-->
+<!--    </form>-->
+ </body>
+</html>
