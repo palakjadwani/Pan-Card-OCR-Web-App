@@ -1,5 +1,13 @@
 # from django.conf import settings
 # from ocrapp.ocrapp.settings import BASE_DIR
+from pathlib import Path
+
+from matplotlib import pyplot as plt
+from imutils.perspective import four_point_transform
+from skimage.filters import threshold_local
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 try:
     from PIL import Image
@@ -13,20 +21,23 @@ import re
 import json
 import io
 import os
+import imutils
 
 
 def ocr(filename):
     """
     This function will handle the core OCR processing of images.
     """
-    i = cv2.imread(filename)
+    print(filename)
 
-    # Convert to gray
-    i = cv2.cvtColor(i, cv2.COLOR_BGR2GRAY)
+    # load the image, resize and convert it to grayscale
+    i = cv2.imread(filename)
+    i = imutils.resize(i, height=500)
+    gray = cv2.cvtColor(i, cv2.COLOR_BGR2GRAY)
 
     # Apply dilation and erosion to remove some noise
     kernel = np.ones((1, 1), np.uint8)
-    i = cv2.dilate(i, kernel, iterations=1)
+    i = cv2.dilate(gray, kernel, iterations=1)
     i = cv2.erode(i, kernel, iterations=1)
 
     text = pytesseract.image_to_string(i)
@@ -159,4 +170,4 @@ def ocr(filename):
 
     return data
 
-# print(ocr(os.path.join(BASE_DIR, 'Images\pan_card.jpg')))
+print(ocr(os.path.join(BASE_DIR, 'Media\\pan.jpg')))
