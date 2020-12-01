@@ -170,4 +170,4 @@ def ocr(filename):
 
     return data
 
-print(ocr(os.path.join(BASE_DIR, 'Media\\pan.jpg')))
+print(ocr(os.path.join(BASE_DIR, 'Media\\4.jpg')))
