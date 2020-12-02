@@ -120,7 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = ['127.0.0.1', 'pan-card-ocr-app.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'pan-card-ocr.herokuapp.com']
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
