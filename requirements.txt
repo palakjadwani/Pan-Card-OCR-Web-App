@@ -1,4 +1,4 @@
-pytesseract==0.3.6git add
+pytesseract==0.3.6
 imutils==0.5.3
 opencv_python==4.4.0.46
 ftfy==5.8
