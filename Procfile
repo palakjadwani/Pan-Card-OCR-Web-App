@@ -1,0 +1,1 @@
+gweb: gunicorn Pan-Card-OCR-Web-App.wsgi
