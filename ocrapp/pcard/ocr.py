@@ -1,10 +1,4 @@
-# from django.conf import settings
-# from ocrapp.ocrapp.settings import BASE_DIR
 from pathlib import Path
-
-from matplotlib import pyplot as plt
-from imutils.perspective import four_point_transform
-from skimage.filters import threshold_local
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
